@@ -7,8 +7,10 @@
         <h1>auth</h1>
         <script>
             const urlParams = new URLSearchParams(window.location.search);
-            console.log("state", urlParams.get("state"));
-            console.log("token", urlParams.get("token"));
+            const state = urlParams.get("state");
+            const code = urlParams.get("code");
+            console.log("state", state);
+            console.log("code", code);
         </script>
     </body>
 </html>
