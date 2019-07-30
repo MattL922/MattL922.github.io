@@ -11,16 +11,15 @@
             const code = urlParams.get("code");
             console.log("state", state);
             console.log("code", code);
-            fetch("https://us-central1-web-component-registry-247823.cloudfunctions.net/token", {
-                method: "POST",
-                cache: "no-cache",
-                credentials: "same-origin",
-                body: `code=${code}`,
-            }).then(res => {
-                console.log("res", res);
-            }).catch(err => {
-                console.error(err);
+            const req = new XMLHTTPRequest();
+            req.addEventListener("load", (e) => {
+                console.log("load:", e);
             });
+            req.addEventListener("error", (e) => {
+                console.log("error:", e);
+            });
+            req.open("POST", "https://us-central1-web-component-registry-247823.cloudfunctions.net/token");
+            req.send(`code=${code}`);
         </script>
     </body>
 </html>
