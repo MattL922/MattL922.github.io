@@ -18,6 +18,7 @@
             req.addEventListener("error", (e) => {
                 console.log("error:", e);
             });
+            req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             req.open("POST", "https://us-central1-web-component-registry-247823.cloudfunctions.net/token");
             req.send(`code=${code}`);
         </script>
