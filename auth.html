@@ -14,7 +14,7 @@
             fetch("https://us-central1-web-component-registry-247823.cloudfunctions.net/token", {
                 method: "POST",
                 cache: "no-cache",
-                credentials: "include",
+                credentials: "same-origin",
                 body: `code=${code}`,
             }).then(res => {
                 console.log("res", res);
