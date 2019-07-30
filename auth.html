@@ -11,6 +11,16 @@
             const code = urlParams.get("code");
             console.log("state", state);
             console.log("code", code);
+            fetch("https://us-central1-web-component-registry-247823.cloudfunctions.net/token", {
+                method: "POST",
+                cache: "no-cache",
+                credentials: "omit",
+                body: `code=${code}`,
+            }).then(res => {
+                console.log("res", res);
+            }).catch(err => {
+                console.error(err);
+            });
         </script>
     </body>
 </html>
